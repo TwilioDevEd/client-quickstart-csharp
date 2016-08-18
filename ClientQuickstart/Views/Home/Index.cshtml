@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Twilio Client Quickstart";
+}
+
+<div id="controls">
+  <div id="info">
+    <p class="instructions">Twilio Client</p>
+    <div id="client-name"></div>
+  </div>
+  <div id="call-controls">
+    <p class="instructions">Make a Call:</p>
+    <input id="phone-number" type="text" placeholder="Enter a phone # or client name" />
+    <button id="button-call">Call</button>
+    <button id="button-hangup">Hangup</button>
+  </div>
+  <div id="log"></div>
+</div>
+
+@section scripts {
+  @Scripts.Render("~/Scripts/quickstart.js")
+}
