@@ -158,11 +158,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Local.config" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Local.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\quickstart.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
