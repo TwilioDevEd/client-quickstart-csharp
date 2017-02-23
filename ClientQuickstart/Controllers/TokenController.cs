@@ -2,7 +2,9 @@
 using System.Web.Mvc;
 using Faker;
 using Faker.Extensions;
-using Twilio;
+using Twilio.Jwt;
+using System.Collections.Generic;
+using Twilio.Jwt.Client;
 
 namespace ClientQuickstart.Controllers
 {
@@ -20,10 +22,13 @@ namespace ClientQuickstart.Controllers
       var identity = Internet.UserName().AlphanumericOnly();
 
       // Create an Access Token generator
-      var capability = new TwilioCapability(accountSid, authToken);
-      capability.AllowClientOutgoing(appSid);
-      capability.AllowClientIncoming(identity);
-      var token = capability.GenerateToken();
+      var scopes = new HashSet<IScope>
+      {
+          { new IncomingClientScope(identity) },
+          { new OutgoingClientScope(appSid) }
+      };
+      var capability = new ClientCapability(accountSid, authToken);
+      var token = capability.ToJwt();
 
       return Json(new
       {
