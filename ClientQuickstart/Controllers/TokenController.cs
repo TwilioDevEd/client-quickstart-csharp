@@ -27,7 +27,7 @@ namespace ClientQuickstart.Controllers
           { new IncomingClientScope(identity) },
           { new OutgoingClientScope(appSid) }
       };
-      var capability = new ClientCapability(accountSid, authToken);
+      var capability = new ClientCapability(accountSid, authToken, scopes: scopes);
       var token = capability.ToJwt();
 
       return Json(new
