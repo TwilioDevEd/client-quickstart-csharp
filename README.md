@@ -34,6 +34,8 @@ where `XXXX` is the port number of your app. Take note of this port number.
 
 4. [Download and install ngrok](https://ngrok.com/download)
 
+> [Learn 6 awesome reasons why to use ngrok](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
+
 5. Run ngrok, replacing the two occurrences of `XXXX` in the following
 command with the port number of your app:
 
@@ -48,6 +50,8 @@ It might be something like `https://asdf456.ngrok.io`. Take note of this.
 Voice "REQUEST URL" to be your ngrok URL plus `/voice`. For example:
 
     ![screenshot of twiml app](https://s3.amazonaws.com/com.twilio.prod.twilio-docs/images/TwilioClientRequestUrl.original.png)
+
+> **Note:** You must set your webhook urls to the `https` ngrok tunnel created.
 
 You should now be ready to rock! Make some phone calls.
 Open it on another device and call yourself. Note that Twilio Client requires
