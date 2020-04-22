@@ -1,3 +1,7 @@
+<a href="https://www.twilio.com">
+  <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
+</a>
+
 # Twilio Client Quickstart for C# (ASP.NET MVC)
 
 > We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
@@ -6,29 +10,21 @@ This application should give you a ready-made starting point for writing your
 own voice apps with Twilio Client. Before we begin, we need to collect
 all the config values we need to run the application:
 
-| Config&nbsp;Value  | Description |
+| Config Value  | Description |
 | :-------------  |:------------- |
-Account&nbsp;SID | Your primary Twilio account identifier - find this [in the console here](https://www.twilio.com/console).
-Auth&nbsp;Token | Used to authenticate - [just like the above, you'll find this here](https://www.twilio.com/console).
-TwiML&nbsp;App&nbsp;SID | The TwiML application with a voice URL configured to access your server running this app - create one [in the console here](https://www.twilio.com//console/phone-numbers/dev-tools/twiml-apps). Also, you will need to configure the Voice "REQUEST URL" on the TwiML app once you've got your server up and running.
-Twilio&nbsp;Phone&nbsp;# | A Twilio phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) - you can [get one here](https://www.twilio.com/console/phone-numbers/incoming)
+`TwilioAccountSid` | Your primary Twilio account identifier - find this [in the console here](https://www.twilio.com/console).
+`TwilioTwimlAppSid` | The TwiML application with a voice URL configured to access your server running this app - create one [in the console here](https://www.twilio.com/console/voice/twiml/apps). Also, you will need to configure the Voice "REQUEST URL" on the TwiML app once you've got your server up and running.
+`TwilioCallerId` | A Twilio phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) - you can [get one here](https://www.twilio.com/console/phone-numbers/incoming)
+`TwilioApiKey` / `TwilioApiSecret` | Your REST API Key information needed to create an [Access Token](https://www.twilio.com/docs/iam/access-tokens) - create [one here](https://www.twilio.com/console/project/api-keys).
 
 ## Setting Up The Application
 
-1. After downloading or cloning this application, create a new file in `ClientQuickstart`
-(at the same level as `ClientQuickstart\Web.config`) called `Local.config`.
+1. After downloading or cloning this application, In the `ClientQuickstart`
+directory (at the same level as `ClientQuickstart\Web.config`) duplicate the file
+called `Local.config.example` and rename it as `Local.config`.
 
 2. Next, open up `ClientQuickstart.sln` in Visual Studio.  Edit `Local.config` 
-with the four values we obtained above:
-
-    ```xml
-    <appSettings>
-      <add key="TwilioAccountSid" value="ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
-      <add key="TwilioAuthToken" value="your_auth_token" />
-      <add key="TwilioTwimlAppSid" value="APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
-      <add key="TwilioCallerId" value="+1XXXYYYZZZZ" />
-    </appSettings>
-    ```
+with the five values we obtained above.
 
 3. Hit `F5` or the Play button, and you should land on the home page of our 
 basic voice application. The URL in your browser should be `localhost:XXXX`,
@@ -62,6 +58,10 @@ We'd recommend Google Chrome or Mozilla Firefox instead.
 
 ![screenshot of phone app](https://s3.amazonaws.com/com.twilio.prod.twilio-docs/images/TwilioClientQuickstart.original.png)
 
-## License
+## Meta
 
-MIT
+* No warranty expressed or implied.  Software is as is. Diggity.
+* The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
+* [MIT License](http://www.opensource.org/licenses/mit-license.html)
+* Lovingly crafted by Twilio Developer Education.
+

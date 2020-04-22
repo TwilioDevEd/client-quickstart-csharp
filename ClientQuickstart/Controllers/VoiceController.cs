@@ -27,7 +27,7 @@ namespace ClientQuickstart.Controllers
         {
           dial.Client(to);
         }
-        response.Dial(dial);
+        response.Append(dial);
       }
       else
       {

@@ -1,0 +1,7 @@
+<appSettings>
+  <add key="TwilioAccountSid" value="ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+  <add key="TwilioTwimlAppSid" value="APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+  <add key="TwilioCallerId" value="+1XXXYYYZZZZ" />
+  <add key="TwilioApiKey" value="SKXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+  <add key="TwilioApiSecret" value="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+</appSettings>
