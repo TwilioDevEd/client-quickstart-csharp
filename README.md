@@ -2,6 +2,8 @@
   <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
 </a>
 
+![](https://github.com/TwilioDevEd/client-quickstart-csharp/workflows/NetFx/badge.svg)
+
 # Twilio Client Quickstart for C# (ASP.NET MVC)
 
 > We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
