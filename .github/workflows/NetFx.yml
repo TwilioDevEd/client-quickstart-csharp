@@ -1,0 +1,30 @@
+name: NetFx
+
+on:
+  push:
+    branches: [ master, next ]
+  pull_request:
+    branches: [ master, next ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout Code
+
+    - name: Setup MSBuild Path
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+
+    - name: Restore NuGet Packages
+      run: nuget restore ClientQuickstart.sln
+
+    - name: Set up local configuration
+      run: copy ClientQuickstart\Local.config.example ClientQuickstart\Local.config
+
+    - name: Build Web App
+      run: msbuild ClientQuickstart.sln /p:Configuration=Release

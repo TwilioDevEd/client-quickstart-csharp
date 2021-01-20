@@ -2,9 +2,8 @@
 using System.Web.Mvc;
 using Faker;
 using Faker.Extensions;
-using Twilio.Jwt;
 using System.Collections.Generic;
-using Twilio.Jwt.Client;
+using Twilio.Jwt.AccessToken;
 
 namespace ClientQuickstart.Controllers
 {
@@ -14,21 +13,35 @@ namespace ClientQuickstart.Controllers
     public ActionResult Index()
     {
       // Load Twilio configuration from Web.config
-      var accountSid = ConfigurationManager.AppSettings["TwilioAccountSid"];
-      var authToken = ConfigurationManager.AppSettings["TwilioAuthToken"];
+      var twilioAccountSid = ConfigurationManager.AppSettings["TwilioAccountSid"];
       var appSid = ConfigurationManager.AppSettings["TwilioTwimlAppSid"];
+      var twilioApiKey = ConfigurationManager.AppSettings["TwilioApiKey"];
+      var twilioApiSecret = ConfigurationManager.AppSettings["TwilioApiSecret"];
 
       // Create a random identity for the client
       var identity = Internet.UserName().AlphanumericOnly();
 
+      // Create a Voice grant for this token
+      var grant = new VoiceGrant();
+      grant.OutgoingApplicationSid = appSid;
+
+      // Optional: add to allow incoming calls
+      grant.IncomingAllow = true;
+
+      var grants = new HashSet<IGrant>
+        {
+            { grant }
+        };
+
       // Create an Access Token generator
-      var scopes = new HashSet<IScope>
-      {
-          { new IncomingClientScope(identity) },
-          { new OutgoingClientScope(appSid) }
-      };
-      var capability = new ClientCapability(accountSid, authToken, scopes: scopes);
-      var token = capability.ToJwt();
+      var accessToken = new Token(
+          twilioAccountSid,
+          twilioApiKey,
+          twilioApiSecret,
+          identity,
+          grants: grants);
+
+      var token = accessToken.ToJwt();
 
       return Json(new
       {
