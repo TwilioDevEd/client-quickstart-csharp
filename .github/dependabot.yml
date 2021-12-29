@@ -1,0 +1,71 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/ClientQuickstart"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: Microsoft.IdentityModel.Tokens
+    versions:
+    - 6.10.0
+    - 6.10.1
+    - 6.10.2
+    - 6.8.0
+    - 6.9.0
+  - dependency-name: System.IdentityModel.Tokens.Jwt
+    versions:
+    - 6.10.0
+    - 6.10.1
+    - 6.10.2
+    - 6.8.0
+    - 6.9.0
+  - dependency-name: Microsoft.IdentityModel.Logging
+    versions:
+    - 6.10.0
+    - 6.10.1
+    - 6.10.2
+    - 6.8.0
+    - 6.9.0
+  - dependency-name: Microsoft.IdentityModel.JsonWebTokens
+    versions:
+    - 6.10.0
+    - 6.10.1
+    - 6.10.2
+    - 6.8.0
+    - 6.9.0
+  - dependency-name: JWT
+    versions:
+    - 7.3.1
+    - 8.0.0
+    - 8.1.0
+    - 8.1.2
+    - 8.1.3
+    - 8.1.4
+    - 8.1.5
+    - 8.1.6
+  - dependency-name: Twilio
+    versions:
+    - 5.53.1
+    - 5.54.0
+    - 5.55.0
+    - 5.56.0
+    - 5.57.0
+    - 5.58.0
+  - dependency-name: Faker.Net
+    versions:
+    - 1.4.108
+    - 1.5.126
+  - dependency-name: Microsoft.NETCore.Platforms
+    versions:
+    - 5.0.0
+    - 5.0.1
+  - dependency-name: Microsoft.Net.Compilers
+    versions:
+    - 3.8.0
+  - dependency-name: RestSharp
+    versions:
+    - 106.11.7
+  - dependency-name: Newtonsoft.Json
+    versions:
+    - 12.0.3
